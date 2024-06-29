@@ -22,7 +22,7 @@ def create_user(**params):
 class PublicUserApiTests(TestCase):
     """Test the public feature of user API."""
 
-    def SetUp(self):
+    def setup(self):
         self.client = APIClient()
 
     def test_create_user_success(self):
@@ -125,7 +125,7 @@ class PublicUserApiTests(TestCase):
 class PrivateUserApiTests(TestCase):
     """Test API requests that require authentication."""
 
-    def Setup(self):
+    def setUp(self):
         self.user = create_user(
             email = 'test@example.com',
             password = 'testpass123',

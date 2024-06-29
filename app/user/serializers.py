@@ -62,3 +62,9 @@ class AuthTokenSerializer(serializers.Serializer):
         attrs['user'] = user
 
         return attrs
+    
+class UserListSerializer(serializers.ModelSerializer):
+    """Serializer for user listing"""
+    class Meta:
+        model = get_user_model()
+        fields = ['id', 'email', 'name']
